@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://namnmai.com']
+CSRF_TRUSTED_ORIGINS = ['https://namnmai.com', 'https://namnmai.dev']
 
 
 # Application definition
