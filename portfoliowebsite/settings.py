@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-vtw_en&-+6z_zgio-(pu*@vnzl&fe&1tzaqm%fnguosfio)309
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'portfolio-website-nm-b4760818e203.herokuapp.com'
+    'portfolio-website-nm-b4760818e203.herokuapp.com',
+    '127.0.0.1',
 ]
 
 

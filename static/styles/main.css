@@ -27,7 +27,7 @@ body {
 
 .hero {
 	background-color: #1F2428;
-	min-height: 70vh;
+	min-height: 50vh;
 	color: #fff;
 }
 
@@ -50,7 +50,20 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 2em;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
+}
+
+.social-container {
+	display: flex; 
+	justify-content: center; 
+}
+
+.social-pic {
+	margin-left: 1em;
+	margin-right: 1em;
+	height: 75px;
+	width: 75px;
+	border-radius: 100%;
 }
 
 .intro-name {
@@ -110,7 +123,9 @@ body {
 }
 
 .project-image {
-	max-width: 800px;
+	max-width: 100%;
+	margin-top: 2em;
+	margin-bottom: 1em;
 }
 
 .contact-form {
