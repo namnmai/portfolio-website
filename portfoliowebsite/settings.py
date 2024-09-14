@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'portfolio-website-nm-b4760818e203.herokuapp.com',
     '127.0.0.1',
+    'namnmai.com'
 ]
 
 
