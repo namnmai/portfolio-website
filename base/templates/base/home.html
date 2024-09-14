@@ -1,0 +1,70 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero">
+	<div class="hero-content">
+		<div class="hero-content-intro">
+			<img id="profile_pic" src="{% static 'images/nam.png' %}">
+			<h1 class="intro-name">Nam <br> Mai</h1>
+		</div>
+
+		<div class="hero-content-subheadline">
+			<h3 class="description">Software Developer</h3>
+			<p class="slogan">My personal portfolio page</p>
+		</div>	
+	</div>
+	
+</section>
+
+<section class="container section-2">
+	<h3>My Projects</h3>
+	<div class="projects-wrapper">
+		{% for project in projects %}
+		<div class="project-column">
+			<a href="{% url 'project' project.id %}">
+			<img class="project-thumbnail" src="{{project.thumbnail.url}}">
+			</a>
+			<div class="project-body">
+				<h5>{{project.title}}</h5>
+			</div>
+		</div>
+		{% empty %}
+			<h3>There are no projects in the database...</h3>
+		{% endfor %}
+
+	</div>
+
+	<div class="about-wrapper">
+		<h3>My Background</h3>
+		<p>My first exposure to coding was at 8, when I got my first computer. I tinkered with the developer console in games like Half-Life and CS 1.6, and made simple modification to game files to increase bot difficulty and customize character attributes.</p>
+		<p>It wasn't until much later, during my chemistry undergrad, that I learned how coding could be used for far more practical appplications, such as data analysis and visualization.</p>
+		<p>I made the decision to continue a second degree in Computer Science to solidify my programming knowledge so that I can transition into more software-oriented roles. My focus is general software development however I would like to learn more about machine learning and data science.</p>
+		<p>I'm currently working on a compound interest calculator web application that visualizes the power of compound interest for long-term investments.</p>
+	</div>
+
+</section>
+
+<section class="section-1">
+	<div class="skills-container">
+		<h3>More About Me</h3>
+
+		{% for skill in detailed_skills %}
+		<div class="skills-wrapper">
+			<h5>{{skill.title}}</h5>
+			<p>{{skill.body}}</p>
+		</div>
+		{% endfor %}
+
+		<h4>Other Skills</h4>
+		<div class="other-skills-wrapper">
+			{% for skill in skills %}
+			<div class="skill-tag">
+				<span>{{skill.title}}</span>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock content %}
