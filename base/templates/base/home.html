@@ -11,15 +11,13 @@
 
 		<div class="hero-content-subheadline">
 			<h3 class="description">Software Developer</h3>
-			<p class="slogan">I like to build things</p>
+			<p class="slogan">based in San Jose, CA</p>
 			<div class="social-container">
 				<span><a target="_blank" rel="noopener noreferrer" href="https://github.com/namnmai"><img class="social-pic" src="{% static 'images/github-mark-white.png' %}"></a></span>
 				<span><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nam-m-a639b9326/"><img class="social-pic" src="{% static 'images/linked-in-logo.png' %}"></a></span>
 			</div>
-			
 		</div>	
 	</div>
-	
 </section>
 
 <section class="container section-2">
@@ -56,8 +54,14 @@
 
 		{% for skill in detailed_skills %}
 		<div class="skills-wrapper">
-			<h5>{{skill.title}}</h5>
-			<p>{{skill.body}}</p>
+			{% if skill.logo %}
+			<img class="skill-logo" src="{{skill.logo.url}}">
+			{% endif %}
+			<div>
+				<h5>{{skill.title}}</h5>
+				<p>{{skill.body}}</p>
+			</div>
+
 		</div>
 		{% endfor %}
 
