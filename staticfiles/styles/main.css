@@ -108,6 +108,15 @@ body {
 .skills-wrapper {
 	margin-top: 2em;
 	margin-bottom: 2em;
+	display: flex;
+	gap: 1em;
+	align-items: center;
+}
+
+.skill-logo {
+	width: 75px;
+	object-fit: contain;
+	margin-right: 1em;
 }
 
 .other-skills-wrapper {
@@ -150,9 +159,19 @@ body {
 	}
 }
 
-@media (max-width:800px) {
+@media (max-width:600px) {
 	.skills-container {
 		width: 100%;
 	}
 }
+
+@media (max-width:400px) {
+	
+	.skills-wrapper {
+		flex-flow: column;
+	}
+
+}
+
+
 
