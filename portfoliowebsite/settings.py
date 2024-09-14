@@ -24,13 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vtw_en&-+6z_zgio-(pu*@vnzl&fe&1tzaqm%fnguosfio)309'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'portfolio-website-nm-b4760818e203.herokuapp.com',
     '127.0.0.1',
-    'namnmai.com'
+    'namnmai.com',
+    'localhost'
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://namnmai.com/']
 
 
 # Application definition
