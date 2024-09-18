@@ -6,8 +6,12 @@
 
 A portfolio website designed to showcase my projects, developed using Django and plain HTML/CSS, and deployed on Heroku.
 
+<a href="https://namnmai.dev" target="_blank"><img src="https://img.shields.io/badge/Website-6da360?style=for-the-badge&logo=Django"></a>
+
+
 ## Table of Contents
 - [Technologies Used](#technologies-used)
+
 
 ## Technologies Used<a name="technologies-used"></a>
 - Django
