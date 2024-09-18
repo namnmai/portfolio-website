@@ -8,7 +8,6 @@ A portfolio website designed to showcase my projects, developed using Django and
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [Credits](#credits)
 
 ## Technologies Used<a name="technologies-used"></a>
 - Django
