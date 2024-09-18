@@ -3,6 +3,10 @@
 		Home
 	</a>
 
+	<a class="nav-link" href="{% url 'contact' %}">
+		Contact
+	</a>
+
 	{% if request.user.is_authenticated %}
 	<a class="nav-link" href="{% url 'inbox' %}">
 		Inbox
