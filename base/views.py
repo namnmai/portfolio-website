@@ -42,7 +42,48 @@ def contactSuccess(request):
 
 def projectPage(request, pk):
 	project = Project.objects.get(id=pk)
-	context = {'project': project}
+      
+	# Define a mapping from technology names to their corresponding Font Awesome icon classes
+	tech_icons = {
+        'Python': 'fab fa-python',
+        'Django': 'fas fa-leaf',  # Using a leaf as a placeholder for Django
+        'JavaScript': 'fab fa-js-square',
+        'React': 'fab fa-react',
+        'HTML5': 'fab fa-html5',
+        'CSS3': 'fab fa-css3-alt',
+        'Bootstrap': 'fab fa-bootstrap',
+        'Git': 'fab fa-git-alt',
+        'GitHub': 'fab fa-github',
+        'Docker': 'fab fa-docker',
+        'AWS': 'fab fa-aws',
+        'PostgreSQL': 'fas fa-database',
+        'MySQL': 'fas fa-database',
+        'Node.js': 'fab fa-node-js',
+        'TypeScript': 'fab fa-js-square',
+        # Add more technologies as needed
+    }
+
+    # Categorize technologies from the model fields
+	tech_categories = {
+        'Backend': project.backend_technologies.split(',') if project.backend_technologies else [],
+        'Frontend': project.frontend_technologies.split(',') if project.frontend_technologies else [],
+        'Database': project.database_technologies.split(',') if project.database_technologies else [],
+        'Other': project.other_technologies.split(',') if project.other_technologies else []
+    }
+
+    # Create a dictionary to store technologies with their respective icons, categorized
+	categorized_technologies = {}
+	for category, tech_list in tech_categories.items():
+		categorized_technologies[category] = []
+		for tech in tech_list:
+			tech = tech.strip()  # Strip any extra spaces
+			icon_class = tech_icons.get(tech, 'fas fa-tools')  # Default icon if not found
+			categorized_technologies[category].append({'name': tech, 'icon': icon_class})
+
+	context = {
+        'project': project,
+        'categorized_technologies': categorized_technologies
+    }
 	return render(request, 'base/project.html', context)
 
 

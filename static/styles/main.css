@@ -143,6 +143,31 @@ body {
 	margin: 0 auto;
 }
 
+/* Project Image Styling */
+.project-image {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Hover Effect for Images */
+.img-fluid:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s;
+}
+
+/* Icons and Technologies */
+.technologies-section i {
+    color: #007bff; /* Customize icon color if desired */
+}
+
+/* Button Hover Effects */
+.btn-success:hover, .btn-dark:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
 @media (max-width:900px) {
 	.hero-content-intro {
 		flex-direction: column;
