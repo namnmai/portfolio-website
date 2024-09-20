@@ -21,8 +21,17 @@ class ProjectAdmin(admin.ModelAdmin):
         }),
     )
 
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'body')
+        }),
+    )
+
 # Register the Project model with the customized ProjectAdmin class
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(Skill)
+admin.site.register(Skill, SkillAdmin)
 admin.site.register(Tag)
 admin.site.register(Message)
