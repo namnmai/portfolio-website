@@ -89,18 +89,19 @@ WSGI_APPLICATION = 'portfoliowebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# Existing DATABASES configuration
+# Update the DATABASES setting with Heroku's DATABASE_URL
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Default engine
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
 
-# Update the DATABASES setting with Heroku's DATABASE_URL
-DATABASES['default'] = dj_database_url.config(
-    default=os.environ.get('DATABASE_URL')
-)
+# Existing DATABASES configuration
+if not DATABASES['default']:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 
 
 # Password validation
